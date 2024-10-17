@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import styles from "./page.module.css";
+import Button from "./components/Button/Button";
 
-const Counter = (): JSX.Element => {
+const Counter = () => {
   const [counter, setCounter] = useState(0);
   const minus = (): void => {
     setCounter(counter - 1);
@@ -12,13 +13,9 @@ const Counter = (): JSX.Element => {
   };
   return (
     <div className={styles.wrapper}>
-      <button className={styles.button} onClick={minus}>
-        -
-      </button>
+      <Button onClick={minus}>-</Button>
       <span className={styles.font}>{counter}</span>
-      <button className={styles.button} onClick={plus}>
-        +
-      </button>
+      <Button onClick={plus}>+</Button>
     </div>
   );
 };
